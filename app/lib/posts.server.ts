@@ -8,11 +8,8 @@ type PostMeta = {
   tag: string
 }
 
-/**
- * import all posts under a certain filesystem path
- * @param path filesystem path relative to /app/routes
- * @returns any[]
- */
+export type PostListItem = PostMeta & { slug: string }
+
 export async function getPosts(path: string) {
   const basepath = `${__dirname}/../app/routes/${path.replace(/^\//, '').replace(/\/$/, '')}`
   const directory = await fs.readdir(basepath)

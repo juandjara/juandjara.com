@@ -1,13 +1,7 @@
 import { getPosts } from "@/lib/posts.server"
+import type { PostListItem } from "@/lib/posts.server"
 import { json } from "@remix-run/node"
 import { Link, useLoaderData } from "@remix-run/react"
-
-type PostListItem = {
-  slug: string
-  title: string
-  date: string
-  tag: string
-}
 
 type LoaderData = {
   posts: PostListItem[]
@@ -29,20 +23,17 @@ export const meta = {
 export default function BlogIndex() {
   const { posts } = useLoaderData<LoaderData>()
   return (
-    <div>
-      <h2 className="text-stone-600">Blog</h2>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <div className="space-x-3 flex justify-between items-center">
-              <Link to={post.slug}>{post.title}</Link>
-              <time className="text-sm font-medium text-stone-500" dateTime={post.date}>
-                {formatDate(post.date)}
-              </time>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul>
+      {posts.map((post) => (
+        <li key={post.slug}>
+          <div className="space-x-3 flex justify-between items-center">
+            <Link className="" to={post.slug}>{post.title}</Link>
+            <time className="text-sm font-medium text-stone-500" dateTime={post.date}>
+              {formatDate(post.date)}
+            </time>
+          </div>
+        </li>
+      ))}
+    </ul>
   )
 }
