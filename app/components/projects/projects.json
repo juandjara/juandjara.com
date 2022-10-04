@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Homelab",
+    "description": "Las aplicaciones de un  pequeño servidor montado en una estanteria de mi casa, accesible desde todo internet, enfocado principalmente en ser un centro multimedia",
+    "link": "https://apps.fuken.xyz"
+  },
+  {
+    "title": "Palomitas",
+    "description":"Series en streaming por torrents",
+    "image": "https://palomitas.fuken.xyz/palomitas-outline.png",
+    "link": "https://palomitas.fuken.xyz"
+  },
+  {
+  	"title": "Palomovies",
+  	"description": "Peliculas en streaming por torrents",
+  	"image": "/images/movie-icon.png",
+  	"link": "https://palomovies.surge.sh"
+  },
+  {
+    "title": "Dibujitos",
+    "description": "Anime en streaming por torrents",
+    "image": "https://dibujitos.fuken.xyz/favicon-96x96.png",
+    "link": "https://dibujitos.fuken.xyz"
+  },
+  {
+    "title": "Freetunes",
+    "description":"Escucha musica de youtube en segundo plano en tu movil",
+    "image": "https://freetunes.fuken.xyz/note.png",
+    "link": "https://freetunes.fuken.xyz"
+  },
+  {
+    "title": "Tetris.js",
+    "description":"El clásico inmortal",
+    "image": "https://juandjara.github.io/tetris/tetris.png",
+    "link": "https://juandjara.github.io/tetris"
+  },
+  {
+    "title": "Snake.js",
+    "description":"Juego del dia siguiente a la Familiar Game Jam 8",
+    "image": "https://juandjara.github.io/snake-game/apple-touch-icon.png",
+    "link": "https://juandjara.github.io/snake-game"
+  },
+  {
+    "title": "Touch drums",
+    "description":"Batería táctil adaptada de un proyecto de javascript30.com",
+    "image": "/images/drum-icon.png",
+    "link": "https://drum.surge.sh"
+  },
+  {
+    "title": "Asociación Guardianes",
+    "description": "Portal web de la Asociacion de ocio alternativo Guardianes de Sevilla",
+    "image": "https://asoguardianes.com/images/escudo-fullcolor.png",
+    "link": "https://asoguardianes.com"
+  },
+  {
+    "title": "Guardianes del Rol",
+    "description": "Portal para organizar las partidas de juegos de rol de la asociación Guardianes de Sevilla",
+    "image": "https://asoguardianes.com/images/escudo-fullcolor.png",
+    "link": "https://guardianesdelrol.now.sh"
+  }
+]

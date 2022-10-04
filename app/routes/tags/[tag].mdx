@@ -1,0 +1,13 @@
+---
+title: Tagged Posts
+type: tag
+---
+
+import { useParams } from "@remix-run/react"
+
+export const TagName = () => {
+  const { tag } = useParams()
+  return tag || null
+}
+
+# Posts Tagged with “<TagName/>”
