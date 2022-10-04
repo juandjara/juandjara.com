@@ -2,7 +2,7 @@
 title: A new Light
 date: 2022-09-07 00:00:00 Z
 description: "¿Bueno, y esto que es?"
-tag: reflexion
+tag: reflexion, open source
 author: ''
 ---
 

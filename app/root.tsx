@@ -8,6 +8,7 @@ import {
   ScrollRestoration,
   useCatch,
 } from "@remix-run/react"
+import Footer from "./components/Footer"
 import GlobalSpinner from "./components/GlobalSpiner"
 import LiveReload from "./components/LiveReload"
 import tailwind from "./tailwind.css"
@@ -32,10 +33,11 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-cyan-50">
         <GlobalSpinner />
-        <div className="container mx-auto px-3">
+        <div className="max-w-prose md:mx-20 px-3">
           <Outlet />
+          <Footer />
         </div>
         <ScrollRestoration />
         <Scripts />

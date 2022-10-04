@@ -8,7 +8,7 @@ const navLinkCN = ({ isActive }: { isActive: boolean }) => isActive
 
 export default function Index() {
   return (
-    <div className="max-w-prose">
+    <div>
       <div className="flex items-center mt-12">
         <img alt="site logo" src="/images/avatar.jpeg" width={60} height={60} className="rounded-full mr-4" />
         <h2 className="text-4xl font-bold text-stone-600">Juan D. Jara</h2>
@@ -71,18 +71,12 @@ export default function Index() {
           Puedes usar los enlaces de aqu&iacute; abajo para contactar conmigo
           {" "}<span role="img" aria-label="mano apuntando hacia abajo">👇</span>
         </p>
-        <hr />
+        <hr className="border-gray-300" />
         <a href="https://twitter.com/_juandjara">Twitter</a>
         {' · '}<a href="https://github.com/juandjara">GitHub</a>
         {' · '}<a href="https://instagram.com/_juandjara">Instagram</a>
         {' · '}<a href="juanorigami@gmail.com">Email</a>
       </Content>
-      <footer className="my-12 flex items-center">
-        <p>2022 © Juan D. Jara</p>
-        <div className="flex-grow"></div>
-        <a className="ml-3 underline" href="https://pressunto.fly.dev/r/juandjara/remix-blog">Edit</a>
-        <a className="ml-3 underline" href="/feed.xml">RSS</a>
-      </footer>
     </div>
   )
 }

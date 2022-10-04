@@ -16,7 +16,7 @@ export const meta = {
 
 export default function Projects() {
   return (
-    <div className="max-w-prose">
+    <div>
       <BackLinkHeader to='/' />
       <Content>
         <h2 className="text-stone-600">Proyectos</h2>
