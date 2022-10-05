@@ -29,7 +29,7 @@ export default function PostsLayout() {
     <div>
       <BackLinkHeader to={link} />
       <Content>
-        <h2 className="text-stone-600">{title}</h2>
+        <h2 className="text-stone-600" style={{ marginBottom: 16 }}>{title}</h2>
         {meta && (
           <div className="text-sm mb-12 text-stone-500 font-medium">
             {meta.date && (
