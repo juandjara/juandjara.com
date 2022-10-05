@@ -31,7 +31,7 @@ export default function PostsLayout() {
       <Content>
         <h2 className="text-stone-600" style={{ marginBottom: 16 }}>{title}</h2>
         {meta && (
-          <div className="text-sm mb-12 text-stone-500 font-medium">
+          <div className="text-sm mb-10 text-stone-500 font-medium">
             {meta.date && (
               <time dateTime={meta.date} className="mr-3">
                 {new Date(meta.date).toLocaleDateString('es', { dateStyle: 'medium' })}
