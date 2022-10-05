@@ -19,7 +19,7 @@ export default function Projects() {
     <div>
       <BackLinkHeader to='/' />
       <Content>
-        <h2 className="text-stone-600">Proyectos</h2>
+        <h2 className="text-stone-600 dark:text-stone-100">Proyectos</h2>
         <p>
           Estos son mis proyectos. Algunos de ellos, como Guardianes del Rol, intentan cubrir una necesidad real de una comunidad, pero gran parte los uso como excusa para experimentar con nuevas tecnologías. Es mi forma preferida de aprender algo en ese sentido.
         </p>

@@ -28,9 +28,9 @@ export default function PostsLayout() {
     <div>
       <BackLinkHeader to={link} />
       <Content>
-        <h2 className="text-stone-600" style={{ marginBottom: 16 }}>{title}</h2>
+        <h2 className="text-stone-600 dark:text-stone-100" style={{ marginBottom: 16 }}>{title}</h2>
         {post && (
-          <div className="text-sm mb-10 text-stone-500 font-medium">
+          <div className="text-sm mb-10 text-stone-500 dark:text-stone-300 font-medium">
             {post.date && (
               <time dateTime={post.date} className="mr-3">
                 {new Date(post.date).toLocaleDateString('es', { dateStyle: 'medium' })}

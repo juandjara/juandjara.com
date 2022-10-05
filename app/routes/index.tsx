@@ -3,15 +3,15 @@ import DarkModeToggle from "@/components/DarkModeToggle"
 import { NavLink } from "react-router-dom"
 
 const navLinkCN = ({ isActive }: { isActive: boolean }) => isActive
-  ? 'text-stone-400 cursor-auto'
-  : 'text-stone-600 underline'
+  ? 'dark:text-stone-300 text-stone-400 cursor-auto'
+  : 'dark:text-stone-100 text-stone-600 underline'
 
 export default function Index() {
   return (
     <div>
       <div className="flex items-center mt-12">
         <img alt="site logo" src="/images/avatar.jpeg" width={60} height={60} className="rounded-full mr-4" />
-        <h2 className="text-4xl font-bold text-stone-600">Juan D. Jara</h2>
+        <h2 className="text-4xl font-bold text-stone-600 dark:text-stone-100">Juan D. Jara</h2>
       </div>
       <nav className="flex items-center justify-end space-x-4 pt-12">
         <NavLink className={navLinkCN} to="/projects">Proyectos</NavLink>

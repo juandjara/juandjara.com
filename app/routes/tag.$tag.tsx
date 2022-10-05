@@ -34,7 +34,7 @@ export default function Tag() {
     <div>
       <BackLinkHeader to='/' />
       <Content>
-        <h2 className="text-stone-600"># {tag}</h2>
+        <h2 className="text-stone-600 dark:text-stone-100"># {tag}</h2>
         <PostList posts={posts} />
       </Content>
     </div>

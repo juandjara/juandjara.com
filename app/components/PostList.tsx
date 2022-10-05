@@ -12,7 +12,7 @@ export default function PostList({ posts }: { posts: PostListItem[] }) {
         <li key={post.slug}>
           <div className="space-x-3 flex justify-between items-center">
             <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-            <time className="text-sm font-medium text-stone-500" dateTime={post.date}>
+            <time className="text-sm font-medium text-stone-500 dark:text-stone-300" dateTime={post.date}>
               {formatDate(post.date)}
             </time>
           </div>

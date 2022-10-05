@@ -1,4 +1,5 @@
-import type { MetaFunction } from "@remix-run/node"
+import { json } from "@remix-run/node"
+import type { ActionArgs, LoaderArgs, MetaFunction } from "@remix-run/node"
 import {
   Link,
   Links,
@@ -7,10 +8,12 @@ import {
   Scripts,
   ScrollRestoration,
   useCatch,
+  useLoaderData,
 } from "@remix-run/react"
 import Footer from "./components/Footer"
 import GlobalSpinner from "./components/GlobalSpiner"
 import LiveReload from "./components/LiveReload"
+import { getTheme, toggleTheme } from "./lib/themeCookie.server"
 import tailwind from "./tailwind.css"
 
 export function links() {
@@ -26,14 +29,31 @@ export const meta: MetaFunction = () => ({
   viewport: "width=device-width,initial-scale=1",
 })
 
+export async function loader({ request }: LoaderArgs) {
+  return {
+    theme: await getTheme(request)
+  }
+}
+
+export async function action({ request }: ActionArgs) {
+  const cookie = await toggleTheme(request)
+  return json({ ok: true }, {
+    headers: {
+      'Set-Cookie': cookie
+    }
+  })
+}
+
 export default function App() {
+  const { theme } = useLoaderData<{ theme: string }>()
   return (
-    <html lang="en">
+    <html lang="es" className={theme}>
       <head>
+        <meta name="color-scheme" content="dark light" />
         <Meta />
         <Links />
       </head>
-      <body className="bg-cyan-50">
+      <body className="bg-cyan-50 dark:bg-cyan-900 text-stone-800 dark:text-stone-100">
         <GlobalSpinner />
         <div className="max-w-prose md:mx-20 px-3">
           <Outlet />
