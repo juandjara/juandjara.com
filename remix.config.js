@@ -16,7 +16,21 @@ module.exports = {
         images,
       ],
     }
-  },  
+  },
+  serverDependenciesToBundle: [
+    /remark-.*/,
+    /rehype-.*/,
+    /micromark-.*/,
+    /mdast-.*/,
+    /unist-.*/,
+    /mdx-bundler.*/,
+    'fault',
+    'emoticon',
+    'ccount',
+    'decode-named-character-reference',
+    'character-entities',
+    'markdown-table'
+  ],
   ignoredRouteFiles: ["**/.*"],
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
