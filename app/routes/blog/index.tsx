@@ -19,5 +19,7 @@ export const meta = {
 
 export default function BlogIndex() {
   const { posts } = useLoaderData<LoaderData>()
-  return <PostList posts={posts} />
+  return (
+    <PostList posts={posts} />
+  )
 }

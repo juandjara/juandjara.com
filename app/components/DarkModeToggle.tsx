@@ -19,7 +19,7 @@ export default function DarkModeToggle() {
 
   return (
     <fetcher.Form action='/' method='post'>
-      <button className="p-2 dark:hover:bg-orange-50/50 hover:bg-orange-200/50 rounded-md text-orange-600">
+      <button className="p-2 dark:hover:bg-orange-50/50 hover:bg-orange-200/50 rounded-md text-orange-600 dark:text-yellow-600">
         {theme === 'light' ? <Sun /> : <Moon />}
       </button>
     </fetcher.Form>

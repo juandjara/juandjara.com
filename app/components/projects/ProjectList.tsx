@@ -13,7 +13,12 @@ export default function ProjectList() {
             <img loading='lazy' width={80} height={80} src={project.image} alt="" />
           </div>
           <div className="flex-grow">
-            <a className="block text-2xl font-medium no-underline mb-1 text-stone-500" href={project.link}>{project.title}</a>
+            <a 
+              href={project.link}
+              className="block text-2xl font-medium no-underline mb-1 text-orange-600 dark:text-yellow-600"
+            >
+              {project.title}
+            </a>
             <p>{project.description}</p>
           </div>
         </div>

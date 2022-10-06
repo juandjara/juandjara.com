@@ -1,6 +1,9 @@
 import fs from 'fs/promises'
 import { extname } from 'path'
 import frontMatter from 'front-matter'
+import {bundleMDX} from 'mdx-bundler'
+import remixConfig from '../../remix.config'
+import type { RemixMdxConfig, RemixMdxConfigFunction } from '@remix-run/dev/dist/config'
 
 type PostMeta = {
   title: string
@@ -11,7 +14,7 @@ type PostMeta = {
 export type PostListItem = PostMeta & { slug: string }
 
 export async function getPosts(path: string) {
-  const basepath = `${__dirname}/../app/routes/${path.replace(/^\//, '').replace(/\/$/, '')}`
+  const basepath = `${process.cwd()}/app/routes/${path.replace(/^\//, '').replace(/\/$/, '')}`
   const directory = await fs.readdir(basepath)
 
   const posts = await Promise.all(directory
@@ -36,4 +39,21 @@ export async function getPosts(path: string) {
 
     return bMS - aMS
   })
+}
+
+export async function getSinglePost(slug: string) {
+  const path = `${process.cwd()}/app/routes/${slug.replace(/^\//, '').replace(/\/$/, '')}`
+  const text = await fs.readFile(path)
+  const config = await (remixConfig.mdx as RemixMdxConfigFunction)(path) as RemixMdxConfig
+  const result = await bundleMDX({
+    source: text.toString(),
+    mdxOptions (options) {
+      options.remarkPlugins = (options.remarkPlugins ?? []).concat(config.remarkPlugins as any[])
+      options.rehypePlugins = (options.rehypePlugins ?? []).concat(config.rehypePlugins as any[])
+  
+      return options
+    }
+  })
+
+  return result
 }
