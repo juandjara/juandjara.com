@@ -17,7 +17,7 @@ export type PostListItem = PostMeta & {
 }
 
 export async function getPosts() {
-  const basepath = `${process.cwd()}/app/routes/blog`
+  const basepath = `${process.cwd()}/content/blog`
   const directory = await fs.readdir(basepath)
 
   const posts = await Promise.all(directory
@@ -53,7 +53,7 @@ export type Project = {
 }
 
 export async function getProjects() {
-  const basepath = `${process.cwd()}/app/routes/projects`
+  const basepath = `${process.cwd()}/content/projects`
   const directory = await fs.readdir(basepath)
 
   const posts = await Promise.all(directory
@@ -74,9 +74,8 @@ export async function getProjects() {
   })
 }
 
-
 export async function getSinglePost(slug: string) {
-  const path = `${process.cwd()}/app/routes/${slug.replace(/^\//, '').replace(/\/$/, '')}`
+  const path = `${process.cwd()}/content/${slug.replace(/^\//, '').replace(/\/$/, '')}`
   const text = await fs.readFile(path)
   const config = await (remixConfig.mdx as RemixMdxConfigFunction)(path) as RemixMdxConfig
   const result = await bundleMDX({
