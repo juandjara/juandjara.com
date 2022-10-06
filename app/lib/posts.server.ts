@@ -49,6 +49,7 @@ export type Project = {
   image: string
   link: string
   order: number
+  status?: string
   description: string
 }
 

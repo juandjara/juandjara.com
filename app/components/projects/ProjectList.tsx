@@ -18,6 +18,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
             >
               {project.title}
             </a>
+            <span className='text-sm flex-shrink-0'>{project.status}</span>
           </div>
           <MDX html={project.description} />
         </div>
