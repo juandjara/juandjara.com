@@ -9,7 +9,7 @@ type LoaderData = {
 }
 
 export async function loader() {
-  const posts = await getPosts('/blog')
+  const posts = await getPosts()
   return json<LoaderData>({ posts })
 }
 

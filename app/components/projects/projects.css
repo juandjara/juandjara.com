@@ -6,7 +6,7 @@
 @keyframes appear {
   from {
     opacity: 0;
-    transform: translateY(calc(-100% - 32px));
+    transform: translateY(calc(-200%));
   }
   to {
     opacity: 1;

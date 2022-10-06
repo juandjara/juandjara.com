@@ -3,7 +3,7 @@ import Content from "@/components/Content"
 import MDX from "@/components/MDX"
 import ProjectList from "@/components/projects/ProjectList"
 import css from '@/components/projects/projects.css'
-import { getSinglePost } from "@/lib/posts.server"
+import { getProjects, getSinglePost } from "@/lib/posts.server"
 import { useLoaderData } from "@remix-run/react"
 
 export function links() {
@@ -17,19 +17,22 @@ export const meta = {
 }
 
 export async function loader() {
-  const post = await getSinglePost('/projects.md')
-  return { html: post.code }
+  const [post, projects] = await Promise.all([
+    getSinglePost('/projects.md'),
+    getProjects()
+  ])
+  return { html: post.code, projects }
 }
 
 export default function Projects() {
-  const { html } = useLoaderData()
+  const { html, projects } = useLoaderData()
   return (
     <div>
       <BackLinkHeader to='/' />
       <Content>
         <h2 className="text-stone-600 dark:text-stone-100">Proyectos</h2>
         <MDX html={html} />
-        <ProjectList />
+        <ProjectList projects={projects} />
       </Content>
     </div>
   )

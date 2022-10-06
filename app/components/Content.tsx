@@ -1,7 +1,11 @@
-export default function Content({ children }: { children: React.ReactNode }) {
+export default function Content({ children, padding = 'py-8 md:py-12' }: { children: React.ReactNode; padding?: string }) {
+  const style = [
+    'prose prose-orange prose-hr:border-gray-300 lg:prose-xl',
+    'dark:prose-invert dark:prose-yellow',
+    padding
+  ].join(' ')
+
   return (
-    <article className="prose prose-orange dark:prose-invert dark:prose-yellow prose-hr:border-gray-300 lg:prose-xl py-8 md:py-12">
-      {children}
-    </article>
+    <article className={style}>{children}</article>
   )
 }

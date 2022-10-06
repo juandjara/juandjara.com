@@ -11,10 +11,13 @@ type PostMeta = {
   tag: string
 }
 
-export type PostListItem = PostMeta & { slug: string }
+export type PostListItem = PostMeta & {
+  slug: string
+  body?: string
+}
 
-export async function getPosts(path: string) {
-  const basepath = `${process.cwd()}/app/routes/${path.replace(/^\//, '').replace(/\/$/, '')}`
+export async function getPosts() {
+  const basepath = `${process.cwd()}/app/routes/blog`
   const directory = await fs.readdir(basepath)
 
   const posts = await Promise.all(directory
@@ -40,6 +43,37 @@ export async function getPosts(path: string) {
     return bMS - aMS
   })
 }
+
+export type Project = {
+  title: string
+  image: string
+  link: string
+  order: number
+  description: string
+}
+
+export async function getProjects() {
+  const basepath = `${process.cwd()}/app/routes/projects`
+  const directory = await fs.readdir(basepath)
+
+  const posts = await Promise.all(directory
+    .filter(file => {
+      const extension = extname(file)
+      return extension === '.md'
+    })
+    .map(async (file) => {
+      const post = await getSinglePost(`/projects/${file}`)
+      return {
+        description: post.code,
+        ...post.frontmatter
+      } as Project
+    }))
+
+  return posts.sort((a, b) => {
+    return a.order - b.order
+  })
+}
+
 
 export async function getSinglePost(slug: string) {
   const path = `${process.cwd()}/app/routes/${slug.replace(/^\//, '').replace(/\/$/, '')}`
