@@ -3,6 +3,7 @@ import Content from "@/components/Content"
 import { getPosts } from "@/lib/posts.server"
 import type { PostListItem } from "@/lib/posts.server"
 import { json } from "@remix-run/node"
+import type { MetaFunction } from "@remix-run/node"
 import { Link, Outlet, useLoaderData, useLocation } from "@remix-run/react"
 import parseTags from "@/lib/parseTags"
 
@@ -11,9 +12,13 @@ type LoaderData = {
 }
 
 export async function loader() {
-  const posts = await getPosts('/blog')
+  const posts = await getPosts()
   return json<LoaderData>({ posts })
 }
+
+export const meta: MetaFunction<typeof loader> = ({ data, location }) => ({
+  title: data.posts.find(p => location.pathname === `/blog/${p.slug}`)?.title
+})
 
 export default function PostsLayout() {
   const { posts } = useLoaderData<LoaderData>()

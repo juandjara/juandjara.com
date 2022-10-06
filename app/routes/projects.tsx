@@ -13,7 +13,7 @@ export function links() {
 }
 
 export const meta = {
-  title: 'Proyectos — Juan D. Jara'
+  title: 'Juan D. Jara — Proyectos'
 }
 
 export async function loader() {

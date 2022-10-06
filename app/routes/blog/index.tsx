@@ -14,7 +14,7 @@ export async function loader() {
 }
 
 export const meta = {
-  title: 'Blog — Juan D. Jara'
+  title: 'Juan D. Jara — Blog'
 }
 
 export default function BlogIndex() {
