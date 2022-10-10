@@ -1,0 +1,9 @@
+
+{
+  "collections": [],
+  "templates": [],
+  "drafts": {
+    "enabled": false,
+    "route": "/drafts"
+  }
+}
