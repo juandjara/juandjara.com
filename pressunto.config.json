@@ -1,1 +1,1 @@
-{"collections":[{"id":"posts","name":"Posts","route":"/content/posts","template":""}],"templates":[],"drafts":{"enabled":false,"route":"/drafts"}}
+{"collections":[{"id":"posts","name":"Posts","route":"/content/blog","template":""}],"templates":[],"drafts":{"enabled":false,"route":"/drafts"}}
