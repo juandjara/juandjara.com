@@ -1,1 +1,1 @@
-{"collections":[{"id":"blog-posts","name":"Blog Posts","route":"/content/blog","template":""}],"templates":[],"drafts":{"enabled":false,"route":"/drafts"}}
+{"collections":[{"id":"blog-posts","name":"Blog Posts","route":"/content/blog","template":""},{"id":"projects","name":"Projects","route":"/content/projects","template":""}],"templates":[],"drafts":{"enabled":false,"route":"/drafts"}}
