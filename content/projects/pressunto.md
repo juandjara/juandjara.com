@@ -8,3 +8,4 @@ status: en desarrollo
 
 Editor de contenido para GitHub enfocado en manejar el contenido de paginas web estaticas
 
+
