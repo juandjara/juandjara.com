@@ -2,7 +2,7 @@
 title: Palomovies
 image: /images/movie-icon.png
 link: https://palomovies.surge.sh
-order: 6
+order: 8
 status: descontinuado
 ---
 
