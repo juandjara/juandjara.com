@@ -1,1 +1,52 @@
-{"collections":[{"id":"blog-posts","name":"Blog Posts","route":"/content/blog","template":""},{"id":"projects","name":"Projects","route":"/content/projects","template":""}],"templates":[],"drafts":{"enabled":false,"route":"/drafts"}}
+{
+  "collections": [
+    {
+      "id": "blog-posts",
+      "name": "Blog Posts",
+      "route": "/content/blog",
+      "template": ""
+    },
+    {
+      "id": "projects",
+      "name": "Projects",
+      "route": "/content/projects",
+      "template": ""
+    }
+  ],
+  "templates": [
+    {
+      "id": "project",
+      "name": "Project",
+      "fields": [
+        {
+          "field": "link",
+          "hidden": false,
+          "default": "",
+          "name": ""
+        },
+        {
+          "field": "image",
+          "hidden": false,
+          "default": "",
+          "name": ""
+        },
+        {
+          "field": "order",
+          "hidden": true,
+          "default": "0",
+          "name": ""
+        },
+        {
+          "field": "status",
+          "hidden": false,
+          "default": "",
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "drafts": {
+    "enabled": false,
+    "route": "/drafts"
+  }
+}
