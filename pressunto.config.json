@@ -43,6 +43,30 @@
           "name": ""
         }
       ]
+    },
+    {
+      "id": "blog",
+      "name": "Blog",
+      "fields": [
+        {
+          "field": "tag",
+          "hidden": false,
+          "default": "",
+          "name": ""
+        },
+        {
+          "field": "description",
+          "hidden": false,
+          "default": "",
+          "name": ""
+        },
+        {
+          "field": "date",
+          "hidden": false,
+          "default": "",
+          "name": ""
+        }
+      ]
     }
   ],
   "drafts": {
