@@ -4,7 +4,7 @@
       "id": "blog-posts",
       "name": "Blog Posts",
       "route": "/content/blog",
-      "template": ""
+      "template": "blog"
     },
     {
       "id": "projects",
@@ -50,6 +50,12 @@
       "fields": [
         {
           "field": "tag",
+          "hidden": false,
+          "default": "",
+          "name": ""
+        },
+        {
+          "field": "description",
           "hidden": false,
           "default": "",
           "name": ""
