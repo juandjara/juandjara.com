@@ -1,5 +1,5 @@
 ---
-title: Ha nacido un nuevo CMS
+title: Building a new CMS
 tag: webdev
 description: 
 date: 
