@@ -11,6 +11,12 @@
       "name": "Projects",
       "route": "/content/projects",
       "template": "project"
+    },
+    {
+      "id": "pages",
+      "name": "Pages",
+      "route": "/content",
+      "template": ""
     }
   ],
   "templates": [
