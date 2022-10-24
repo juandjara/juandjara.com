@@ -25,6 +25,12 @@
       "name": "Project",
       "fields": [
         {
+          "field": "title",
+          "hidden": false,
+          "default": "",
+          "name": ""
+        },
+        {
           "field": "link",
           "hidden": false,
           "default": "",
