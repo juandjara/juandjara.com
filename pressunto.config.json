@@ -61,6 +61,12 @@
       "name": "Blog",
       "fields": [
         {
+          "field": "title",
+          "hidden": false,
+          "default": "",
+          "name": ""
+        },
+        {
           "field": "tag",
           "hidden": false,
           "default": "",
