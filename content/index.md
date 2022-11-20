@@ -20,4 +20,4 @@ Y [esta](/blog) (Blog) la tengo con la intenci&oacute;n de acostumbrarme a escri
 
 Puedes usar los enlaces de aqu&iacute; abajo para contactar conmigo 👇
 
-[Twitter](https://twitter.com/_juandjara) · [GitHub](https://github.com/juandjara) · [Instagram](https://instagram.com/_juandjara) · [Email](mailto:juanorigami@gmail.com)
+[Twitter](https://twitter.com/_juandjara) · [GitHub](https://github.com/juandjara) · [Instagram](https://instagram.com/_juandjara) · [Email](mailto:juanorigami@gmail.com) · <a rel="me" href="https://mastodon.social/@juandjara">Mastodon</a>
