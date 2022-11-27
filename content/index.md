@@ -1,3 +1,7 @@
+---
+: null
+---
+
 Hola. Soy Juan, desarrollador web de Sevilla, con experiencia en tecnologias GIS. Me gusta construir proyectos que tengan diseños gráficos cuidados, altas cantidades de interactividad y experiencias que mezclen el arte con la tecnologia. 
 
 He contribuido a varios proyectos open source p&uacute;blicos 🤝
@@ -20,4 +24,4 @@ Y [esta](/blog) (Blog) la tengo con la intenci&oacute;n de acostumbrarme a escri
 
 Puedes usar los enlaces de aqu&iacute; abajo para contactar conmigo 👇
 
-[Twitter](https://twitter.com/_juandjara) · [GitHub](https://github.com/juandjara) · [Instagram](https://instagram.com/_juandjara) · [Email](mailto:juanorigami@gmail.com) · <a rel="me" href="https://mastodon.social/@juandjara">Mastodon</a>
+[Twitter](https://twitter.com/_juandjara) · [GitHub](https://github.com/juandjara) · [Instagram](https://instagram.com/_juandjara) · [Email](mailto:juanorigami@gmail.com) · <a rel="me" href="https://paquita.masto.host/@juandjara">Mastodon</a>
