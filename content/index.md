@@ -1,7 +1,3 @@
----
-: null
----
-
 Hola. Soy Juan, desarrollador web de Sevilla, con experiencia en tecnologias GIS. Me gusta construir proyectos que tengan diseños gráficos cuidados, altas cantidades de interactividad y experiencias que mezclen el arte con la tecnologia. 
 
 He contribuido a varios proyectos open source p&uacute;blicos 🤝
