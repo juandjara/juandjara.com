@@ -1,7 +1,6 @@
 ---
 title: A Second Light
 tag: open source
-published: true
 description: La historia continúa
 date: 2022-09-13T00:00:00.000Z
 ---
