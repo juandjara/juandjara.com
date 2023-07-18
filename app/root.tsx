@@ -50,6 +50,7 @@ export default function App() {
     <html lang="es" className={theme}>
       <head>
         <meta name="color-scheme" content="dark light" />
+        <link rel="icon" type="image/jpeg" href="/images/avatar.jpeg" />
         <Meta />
         <Links />
       </head>
