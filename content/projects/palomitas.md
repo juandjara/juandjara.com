@@ -1,7 +1,7 @@
 ---
 title: Palomitas
 image: https://palomitas.fuken.xyz/palomitas-outline.png
-link: https://palomitas.fuken.xyz
+link: https://github.com/juandjara/palomitas
 order: 6
 status: descontinuado
 ---
