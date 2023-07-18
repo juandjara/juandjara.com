@@ -55,7 +55,7 @@ export default function App() {
       </head>
       <body className="bg-cyan-50 dark:bg-cyan-900 text-stone-800 dark:text-white">
         <GlobalSpinner />
-        <div className="max-w-prose md:mx-20 px-3">
+        <div className="max-w-prose mx-auto px-3">
           <Outlet />
           <Footer />
         </div>
