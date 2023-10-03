@@ -90,5 +90,6 @@
   "drafts": {
     "enabled": false,
     "route": "/drafts"
-  }
+  },
+  "mediaFolder": "public/images"
 }
