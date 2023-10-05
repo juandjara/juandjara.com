@@ -2,7 +2,7 @@
   "collections": [
     {
       "id": "blog-posts",
-      "name": "Blog Posts",
+      "name": "Posts",
       "route": "/content/blog",
       "template": "blog"
     },
