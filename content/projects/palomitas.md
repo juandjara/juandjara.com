@@ -2,7 +2,7 @@
 title: Palomitas
 image: https://palomitas.now.sh/palomitas-outline.png
 link: https://github.com/juandjara/palomitas
-order: 6
+order: 5
 status: descontinuado
 ---
 
