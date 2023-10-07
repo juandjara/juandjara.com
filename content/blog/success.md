@@ -2,7 +2,7 @@
 title: Building a new CMS
 tag: webdev
 description: 
-date: 2022-10-27
+date: 2022-10-27T00:00:00.000Z
 ---
 
 Bueno, pues al final no era tan difícil construir un CMS o algo que se le parezca:
