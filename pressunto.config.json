@@ -17,6 +17,12 @@
       "name": "Pages",
       "route": "/content",
       "template": ""
+    },
+    {
+      "id": "drafts",
+      "name": "Drafts",
+      "route": "/content/drafts",
+      "template": ""
     }
   ],
   "templates": [
