@@ -1,1 +1,9 @@
-LS0tCnRpdGxlOiBUZXRyaXMKaW1hZ2U6IGh0dHBzOi8vanVhbmRqYXJhLmdpdGh1Yi5pby90ZXRyaXMvdGV0cmlzLnBuZwpsaW5rOiBodHRwczovL2p1YW5kamFyYS5naXRodWIuaW8vdGV0cmlzCm9yZGVyOiA3Ci0tLQoKRWwgY2zDoXNpY28gaW5tb3J0YWwuIFVuIHRldHJpcyBiw6FzaWNvIGhlY2hvIGVuIGpzIHZhbmlsbGEgY29uIGxhIGJpYmxvdGVjYSBQaGFzZXIgY29tbyBlamVyY2ljaW8gZGUgcHLDoWN0aWNhIHkgbW9kZWxhZG8gZGUgZGF0b3MuCgo=
+---
+title: Tetris
+image: https://juandjara.github.io/tetris/tetris.png
+link: https://juandjara.github.io/tetris
+order: 7
+---
+
+El clásico inmortal. Un tetris básico hecho en js vanilla con la bibloteca Phaser como ejercicio de práctica y modelado de datos.
+
