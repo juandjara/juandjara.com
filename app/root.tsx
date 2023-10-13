@@ -25,7 +25,7 @@ export function links() {
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: 'Juan D. Jara',
-  description: 'pagina web personal / blogfolio de Juan D. Jara',
+  description: 'pagina web personal de Juan D. Jara',
   viewport: "width=device-width,initial-scale=1",
 })
 
