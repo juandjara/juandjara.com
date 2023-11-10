@@ -51,6 +51,7 @@ export type Project = {
   order: number
   status?: string
   description: string
+  backgroundUrl?: string
 }
 
 export async function getProjects() {

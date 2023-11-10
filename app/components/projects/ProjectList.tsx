@@ -14,7 +14,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
             <img className='flex-shrink-0' loading='lazy' width={48} height={48} src={project.image} alt="" />
             <a 
               href={project.link}
-              className="flex-grow no-underline font-medium text-2xl text-orange-600 dark:text-yellow-600"
+              className="flex-grow no-underline font-medium text-2xl text-orange-600"
             >
               {project.title}
             </a>
