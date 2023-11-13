@@ -63,6 +63,7 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <script async defer data-website-id="fa333b7a-2099-491b-afb1-f410252b8a2b" src="https://uma.djara.dev/umami.js"></script>
       </body>
     </html>
   )
