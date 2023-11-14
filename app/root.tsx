@@ -16,6 +16,7 @@ import LiveReload from "./components/LiveReload"
 import { getTheme, toggleTheme } from "./lib/themeCookie.server"
 import tailwind from "./tailwind.css"
 import ClickSoundEffects from "./components/ClickSoundEffects"
+import BackgroundCanvas from "./components/BackgroundCanvas"
 
 export function links() {
   return [
@@ -66,6 +67,7 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <BackgroundCanvas />
         <ClickSoundEffects />
         {!isDEV && (
           <script async defer data-website-id="fa333b7a-2099-491b-afb1-f410252b8a2b" src="https://uma.djara.dev/umami.js"></script>
