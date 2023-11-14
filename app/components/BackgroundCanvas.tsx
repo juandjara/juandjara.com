@@ -118,7 +118,7 @@ export default function BackgroundCanvas() {
     <canvas
       ref={ref}
       id="background-canvas"
-      className="fixed -z-10 inset-0 w-full h-full pointer-events-none"
+      className="fixed -z-10 inset-0 w-full h-full pointer-events-none touch-pan-y"
     />
   )
 }
