@@ -3,6 +3,7 @@ import { getProjects, getSinglePost } from "@/lib/posts.server"
 import { Link, useLoaderData } from "@remix-run/react"
 import MDX from "@/components/MDX"
 import Header from "@/components/Header"
+import clsx from "clsx"
 
 export const handle = {
   post: 'index.mdx'
@@ -26,7 +27,17 @@ export default function Index() {
       <Header />
       <ul className="flex flex-wrap items-stretch justify-center gap-6 mt-12">
         {projects.map((project) => (
-          <li key={project.link} className="bg-white dark:bg-sky-900 w-80 rounded-xl border border-orange-500 shadow shadow-orange-500 relative">
+          <li key={project.link} className={clsx(
+            'w-80 rounded-xl relative',
+            'bg-white dark:bg-sky-900',
+            'border border-orange-500',
+            'transition-shadow shadow shadow-orange-500',
+            'hover:shadow-md hover:shadow-orange-400',
+            'focus-within:shadow-md focus-within:shadow-orange-400'
+          )} role="button">
+            <a href={project.link} className="absolute inset-0 z-10">
+              <span className="sr-only">{project.title}</span>
+            </a>
             <div className="h-48 bg-orange-500 rounded-t-xl">
               {project.backgroundUrl && (
                 <img
@@ -37,7 +48,7 @@ export default function Index() {
               )}
             </div>
             {project.image && (
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="relative">
                 <img 
                   alt={project.title}
                   src={project.image}
@@ -45,8 +56,8 @@ export default function Index() {
                 />
               </div>
             )}
-            <div className="p-3 mt-6">
-              <p className="text-xl font-semibold mt-3 mb-1">{project.title}</p>
+            <div className="p-3">
+              <p className="not-sr-only text-xl font-semibold mt-2 mb-1">{project.title}</p>
               <MDX html={project.description} />
             </div>
           </li>
