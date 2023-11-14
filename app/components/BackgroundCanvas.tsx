@@ -46,19 +46,6 @@ export default function BackgroundCanvas() {
     }
     document.addEventListener("mousemove", updateCursor)
 
-    function updateCursorTouch(e: TouchEvent) {
-      e.preventDefault()
-      origin.current = {
-        x: dest.current.x,
-        y: dest.current.y,
-      }
-      dest.current = {
-        x: e.touches[0].clientX,
-        y: e.touches[0].clientY,
-      }
-    }
-    document.addEventListener("touchmove", updateCursorTouch, { passive: false })
-
     function onResize() {
       if (ref.current) {
         ref.current.width = window.innerWidth
@@ -108,7 +95,6 @@ export default function BackgroundCanvas() {
     return () => {
       cancelAnimationFrame(raf)
       document.removeEventListener("mousemove", updateCursor)
-      document.removeEventListener("touchmove", updateCursorTouch)
       document.removeEventListener("resize", onResize)
       document.removeEventListener("click", onClick)
     }
@@ -118,7 +104,7 @@ export default function BackgroundCanvas() {
     <canvas
       ref={ref}
       id="background-canvas"
-      className="fixed -z-10 inset-0 w-full h-full pointer-events-none touch-pan-y"
+      className="block md:hidden fixed -z-10 inset-0 w-full h-full pointer-events-none"
     />
   )
 }
