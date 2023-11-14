@@ -70,12 +70,12 @@ export default function BackgroundCanvas() {
       if (canvas && ctx) {
         ctx.fillStyle = background(0.3)
         ctx.fillRect(0, 0, canvas.width, canvas.height)
-        ctx.beginPath()
-        ctx.lineWidth = 4
-        ctx.strokeStyle = orange(1)
-        ctx.moveTo(origin.current.x, origin.current.y)
-        ctx.lineTo(dest.current.x, dest.current.y)
-        ctx.stroke()
+        // ctx.beginPath()
+        // ctx.lineWidth = 4
+        // ctx.strokeStyle = orange(1)
+        // ctx.moveTo(origin.current.x, origin.current.y)
+        // ctx.lineTo(dest.current.x, dest.current.y)
+        // ctx.stroke()
         circles.current.forEach((c) => {
           ctx!.fillStyle = orange(c.opacity)
           ctx!.beginPath()
@@ -104,7 +104,7 @@ export default function BackgroundCanvas() {
     <canvas
       ref={ref}
       id="background-canvas"
-      className="block md:hidden fixed -z-10 inset-0 w-full h-full pointer-events-none"
+      className="block fixed -z-10 inset-0 w-full h-full pointer-events-none"
     />
   )
 }
