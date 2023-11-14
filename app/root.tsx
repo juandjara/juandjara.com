@@ -58,7 +58,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-sky-50 dark:bg-sky-800 text-stone-800 dark:text-white">
+      <body className="selection:bg-sky-200 dark:selection:bg-sky-600 bg-sky-50 dark:bg-sky-800 text-stone-800 dark:text-white">
         <GlobalSpinner />
         <div className="container max-w-screen-xl mx-auto px-3">
           <Outlet />
