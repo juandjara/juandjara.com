@@ -44,6 +44,8 @@ export async function action({ request }: ActionArgs) {
   })
 }
 
+const isDEV = process.env.NODE_ENV === 'development'
+
 export default function App() {
   const { theme } = useLoaderData<{ theme: string }>()
   return (
@@ -63,7 +65,9 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        <script async defer data-website-id="fa333b7a-2099-491b-afb1-f410252b8a2b" src="https://uma.djara.dev/umami.js"></script>
+        {!isDEV && (
+          <script async defer data-website-id="fa333b7a-2099-491b-afb1-f410252b8a2b" src="https://uma.djara.dev/umami.js"></script>
+        )}
       </body>
     </html>
   )
