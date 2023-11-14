@@ -6,7 +6,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
     <div className='not-prose mt-12 space-y-6'>
       {projects.map((project, index) => (
         <div key={project.link}
-          className="appear rounded-md p-4 bg-gradient-to-r from-blue-200/20 to-cyan-500/20"
+          className="appear rounded-md p-4 border border-blue-100 dark:border-cyan-800 bg-gradient-to-r from-blue-100/20 to-cyan-200/20 dark:to-cyan-500/20"
           style={{
             animationDelay: `${index / projects.length}s`
           }}>
