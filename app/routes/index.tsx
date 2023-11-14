@@ -22,7 +22,7 @@ export default function Index() {
   const { projects, html } = useLoaderData<typeof loader>()
 
   return (
-    <div>
+    <>
       <Header />
       <ul className="flex flex-wrap items-stretch justify-center gap-6 mt-12">
         {projects.map((project) => (
@@ -61,6 +61,6 @@ export default function Index() {
       <div className="max-w-prose mx-auto">
         <Content><MDX html={html} /></Content>
       </div>
-    </div>
+    </>
   )
 }
