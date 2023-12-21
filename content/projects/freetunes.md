@@ -6,5 +6,4 @@ status:
 title: Freetunes
 ---
 
-Escucha musica de youtube en segundo plano en tu movil
-
+Escucha y descargar música en mp3 desde youtube en tu dispositivo. Incluso con la pantalla apagada. Ahora también con playlists.
