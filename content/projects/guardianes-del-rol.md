@@ -6,5 +6,4 @@ order: 0
 backgroundUrl: /images/GDR_screenshot.png
 ---
 
-Portal para organizar las partidas de juegos de rol de la asociación Guardianes de Sevilla
-
+Portal usado antiguamente para organizar las partidas de rol de la Asociación Guardianes de Sevilla
