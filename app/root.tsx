@@ -60,8 +60,10 @@ export default function App() {
       </head>
       <body className="selection:bg-sky-200 dark:selection:bg-sky-600 bg-sky-50 dark:bg-sky-800 text-stone-800 dark:text-white">
         <GlobalSpinner />
-        <div className="container max-w-screen-xl mx-auto px-3">
-          <Outlet />
+        <div className="container max-w-screen-xl mx-auto px-3 min-h-screen flex flex-col">
+          <main className="flex-grow">
+            <Outlet />
+          </main>
           <Footer />
         </div>
         <ScrollRestoration />
