@@ -8,7 +8,7 @@ const SOUNDS = [click1, click2, click3, click4]
 
 export default function ClickSoundEffects() {
   useEffect(() => {
-    const fn = (e: MouseEvent) => {
+    const fn = () => {
       const audio = new Audio(SOUNDS[Math.floor(Math.random() * SOUNDS.length)])
       audio.volume = 0.15
       audio.play()

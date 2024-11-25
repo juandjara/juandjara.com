@@ -5,7 +5,7 @@ const LiveReload =
         port = Number(process.env.REMIX_DEV_SERVER_WS_PORT || 8002),
         nonce = undefined,
       }) {
-        let js = String.raw
+        const js = String.raw
         return (
           <script
             nonce={nonce}

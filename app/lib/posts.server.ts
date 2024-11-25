@@ -2,8 +2,7 @@ import fs from 'fs/promises'
 import { extname } from 'path'
 import frontMatter from 'front-matter'
 import {bundleMDX} from 'mdx-bundler'
-import remixConfig from '../../remix.config'
-import type { RemixMdxConfig, RemixMdxConfigFunction } from '@remix-run/dev/dist/config'
+import { loadMDXPlugins } from './loadMDXPlugins.server'
 
 type PostMeta = {
   title: string
@@ -79,12 +78,12 @@ export async function getProjects() {
 export async function getSinglePost(slug: string) {
   const path = `${process.cwd()}/content/${slug.replace(/^\//, '').replace(/\/$/, '')}`
   const text = await fs.readFile(path)
-  const config = await (remixConfig.mdx as RemixMdxConfigFunction)(path) as RemixMdxConfig
+  const mdxPlugins = await loadMDXPlugins()
   const result = await bundleMDX({
     source: text.toString(),
     mdxOptions (options) {
-      options.remarkPlugins = (options.remarkPlugins ?? []).concat(config.remarkPlugins as any[])
-      options.rehypePlugins = (options.rehypePlugins ?? []).concat(config.rehypePlugins as any[])
+      options.remarkPlugins = (options.remarkPlugins ?? []).concat(mdxPlugins.remarkPlugins)
+      options.rehypePlugins = (options.rehypePlugins ?? []).concat(mdxPlugins.rehypePlugins)
   
       return options
     }

@@ -3,8 +3,9 @@ import Content from "@/components/Content"
 import Header from "@/components/Header"
 import MDX from "@/components/MDX"
 import ProjectList from "@/components/projects/ProjectList"
-import css from '@/components/projects/projects.css'
+import css from '@/components/projects/projects.css?url'
 import { getProjects, getSinglePost } from "@/lib/posts.server"
+import type { MetaFunction } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
 
 export function links() {
@@ -13,9 +14,9 @@ export function links() {
   ]
 }
 
-export const meta = {
-  title: 'Juan D. Jara — Proyectos'
-}
+export const meta: MetaFunction = () => [
+  { title: 'Juan D. Jara — Proyectos' },
+]
 
 export const handle = {
   post: 'projects.md'
@@ -30,7 +31,7 @@ export async function loader() {
 }
 
 export default function Projects() {
-  const { html, projects } = useLoaderData()
+  const { html, projects } = useLoaderData<typeof loader>()
   return (
     <div>
       <Header />

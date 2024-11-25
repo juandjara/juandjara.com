@@ -1,6 +1,5 @@
-import type { RemixMdxConfigFunction } from "@remix-run/dev/dist/config"
 import { bundleMDX } from "mdx-bundler"
-import remixConfig from "remix.config"
+import { loadMDXPlugins } from "./loadMDXPlugins.server"
 
 const SB_AUTH_TOKEN = process.env.SB_AUTH_TOKEN
 const BASE_URL = 'https://sb.djara.dev'
@@ -96,7 +95,7 @@ export function statusError(status: number, message: string) {
 }
 
 async function parseMarkdown(text: string) {
-  const mdxPlugins = await (remixConfig.mdx as RemixMdxConfigFunction)('')  
+  const mdxPlugins = await loadMDXPlugins()
   const result = await bundleMDX({
     source: text,
     mdxOptions (options) {

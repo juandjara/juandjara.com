@@ -2,16 +2,16 @@ import Content from "@/components/Content"
 import DarkModeToggle from "@/components/DarkModeToggle"
 import NoteList from "@/components/NoteList"
 import { getPublicPrefixes } from "@/lib/notes.server"
-import type { LoaderArgs } from "@remix-run/node"
-import { useLoaderData } from "@remix-run/react"
+import { useLoaderData, useOutlet } from "@remix-run/react"
 
-export const loader = async (args: LoaderArgs) => {
+export const loader = async () => {
   const notes = await getPublicPrefixes()
   return { notes }
 }
 
 export default function Notes() {
   const { notes } = useLoaderData<typeof loader>()
+  const children = useOutlet()
 
   return (
     <div>
@@ -24,9 +24,11 @@ export default function Notes() {
           <DarkModeToggle /> 
         </div>
       </header>
-      <Content>
-        <NoteList notes={notes} />
-      </Content>
+      {children ? children : (
+        <Content>
+          <NoteList notes={notes} />
+        </Content>
+      )}
     </div>
   )
 }

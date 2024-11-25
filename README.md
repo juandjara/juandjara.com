@@ -1,13 +1,11 @@
 # Welcome to Remix!
 
-- [Remix Docs](https://remix.run/docs)
+- 📖 [Remix docs](https://remix.run/docs)
 
-This is the **remix-tailwind-starter** by juandjara. It contains just the basic remix example but with some conventions I like better, some fixes and some tweaks and touches.
+## Styling
 
-* Absolute imports are used with `@/` instead of `~/`
-* An animated [GlobalSpinner](./app/components/GlobalSpiner.tsx) component is added to [`root.tsx`](./app/root.tsx)
-* Custom [LiveReload component](./app/components/LiveReload.tsx) to fix weird redirect behaviour on firefox due to websocket issues as in [remix issue #2997](https://github.com/remix-run/remix/issues/2997)
-* Styled global `ErrorBoundary` and `CatchBoundary` components in [`root.tsx`](./app/root.tsx)
+This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+
 
 ## Fly Setup
 

@@ -34,7 +34,7 @@ export default function Index() {
             'transition-shadow shadow shadow-orange-500',
             'hover:shadow-md hover:shadow-orange-400',
             'focus-within:shadow-md focus-within:shadow-orange-400'
-          )} role="button">
+          )}>
             <a href={project.link} className="absolute inset-0 z-10">
               <span className="sr-only">{project.title}</span>
             </a>

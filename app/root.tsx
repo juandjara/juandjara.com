@@ -1,45 +1,55 @@
-import { json } from "@remix-run/node"
-import type { ActionArgs, LoaderArgs, MetaFunction } from "@remix-run/node"
 import {
+  isRouteErrorResponse,
   Link,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-  useCatch,
   useLoaderData,
+  useRouteError,
 } from "@remix-run/react"
-import Footer from "./components/Footer"
-import GlobalSpinner from "./components/GlobalSpiner"
-import LiveReload from "./components/LiveReload"
-import { getTheme, toggleTheme } from "./lib/themeCookie.server"
-import tailwind from "./tailwind.css"
-import ClickSoundEffects from "./components/ClickSoundEffects"
-import BackgroundCanvas from "./components/BackgroundCanvas"
+import type { ActionFunctionArgs, LinksFunction, LoaderFunctionArgs, MetaFunction } from "@remix-run/node"
+import { data } from "@remix-run/node"
 
-export function links() {
+import "./tailwind.css"
+import { getTheme, toggleTheme } from "./lib/themeCookie.server"
+import GlobalSpinner from "./components/GlobalSpiner"
+import Footer from "./components/Footer"
+import BackgroundCanvas from "./components/BackgroundCanvas"
+import ClickSoundEffects from "./components/ClickSoundEffects"
+
+export const links: LinksFunction = () => [
+  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  {
+    rel: "preconnect",
+    href: "https://fonts.gstatic.com",
+    crossOrigin: "anonymous",
+  },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+  },
+]
+
+export const meta: MetaFunction = () => {
   return [
-    { rel: "stylesheet", href: tailwind },
+    { charSet: "utf-8" },
+    { title: "Juan D. Jara" },
+    { name: "description", content: "Sitio web personal de Juan D. Jara. Redes, notas y proyectos" },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   ]
 }
 
-export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: 'Juan D. Jara',
-  description: 'pagina web personal de Juan D. Jara',
-  viewport: "width=device-width,initial-scale=1",
-})
-
-export async function loader({ request }: LoaderArgs) {
+export async function loader({ request }: LoaderFunctionArgs) {
   return {
     theme: await getTheme(request)
   }
 }
 
-export async function action({ request }: ActionArgs) {
+export async function action({ request }: ActionFunctionArgs) {
   const cookie = await toggleTheme(request)
-  return json({ ok: true }, {
+  return data({ ok: true }, {
     headers: {
       'Set-Cookie': cookie
     }
@@ -48,11 +58,13 @@ export async function action({ request }: ActionArgs) {
 
 const isDEV = process.env.NODE_ENV === 'development'
 
-export default function App() {
-  const { theme } = useLoaderData<{ theme: string }>()
+export function Layout({ children }: { children: React.ReactNode }) {
+  const { theme } = useLoaderData<typeof loader>()
   return (
     <html lang="es" className={theme}>
       <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="color-scheme" content="dark light" />
         <link rel="icon" type="image/jpeg" href="/images/avatar.jpeg" />
         <Meta />
@@ -62,13 +74,12 @@ export default function App() {
         <GlobalSpinner />
         <div className="container max-w-screen-xl mx-auto px-3 min-h-screen flex flex-col">
           <main className="flex-grow">
-            <Outlet />
+            {children}
           </main>
           <Footer />
         </div>
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
         <BackgroundCanvas />
         <ClickSoundEffects />
         {!isDEV && (
@@ -79,37 +90,32 @@ export default function App() {
   )
 }
 
-export function ErrorBoundary({ error }: { error: Error }) {
-  console.error(error)
-  return (
-    <html>
-      <head>
-        <title>Oh noes! 💥</title>
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <div className="max-w-xl bg-red-50 text-red-800 rounded-xl my-8 mx-auto p-4">
-          <h1 className="text-2xl font-bold text-red-600">
-            Boom! <span role='img' aria-label='explosion'>💥</span>
-          </h1>
-          <h2 className="mt-1 text-xl font-bold text-red-600">There was an unexpected error</h2>
-          <p className="my-2 text-lg">{error.message}</p>
-        </div>
-        <Scripts />
-      </body>
-    </html>
-  )
+export default function App() {
+  return <Outlet />
 }
 
-export function CatchBoundary() {
-  const { status, statusText, data } = useCatch()
-  const title = `${status} ${statusText}`
+export function ErrorBoundary() {
+  const error = useRouteError()
+
+  let status = 500
+  let message = ''
+  let title = ''
+  const isHttpError = isRouteErrorResponse(error)
+  if (isHttpError) {
+    status = error.status
+    message = error.data?.message as string
+    title = `${error.status} ${error.statusText}`
+  } else {
+    if (error instanceof Error) {
+      message = error.message
+      title = 'Uncatched Error'
+    }
+  }
 
   return (
-    <html>
+    <html lang="en">
       <head>
-        <title>{title}</title>
+        <title>Oops!</title>
         <Meta />
         <Links />
       </head>
@@ -121,7 +127,7 @@ export function CatchBoundary() {
           </p>
           <div className="my-6">
             <p className="text-xl font-semibold">{title}</p>
-            <p className="text-base">{data?.message}</p>
+            <p className="text-base">{message}</p>
           </div>
           <Link to="/" className="bg-slate-700 text-white rounded-lg px-4 py-2">Take me home</Link>
         </div>

@@ -1,7 +1,7 @@
-import { useTransition } from "@remix-run/react"
+import { useNavigation } from "@remix-run/react"
 
 export default function GlobalSpinner() {
-  const transition = useTransition()
+  const transition = useNavigation()
   const active = transition.state !== 'idle'
   
   const containerCN = [

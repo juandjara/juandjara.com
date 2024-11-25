@@ -21,7 +21,7 @@ export default function BackgroundCanvas() {
   useEffect(() => {
     const canvas = ref.current
     if (!canvas) return
-    let ctx = canvas.getContext("2d")
+    const ctx = canvas.getContext("2d")
     if (!ctx) return
 
     ctx.globalAlpha = 0
