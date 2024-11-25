@@ -2,26 +2,21 @@ import BackLinkHeader from "@/components/BackLinkHeader"
 import Content from "@/components/Content"
 import { getPosts } from "@/lib/posts.server"
 import type { PostListItem } from "@/lib/posts.server"
-import { json } from "@remix-run/node"
 import type { MetaFunction } from "@remix-run/node"
 import { Link, Outlet, useLoaderData, useLocation } from "@remix-run/react"
 import parseTags from "@/lib/parseTags"
 
-type LoaderData = {
-  posts: PostListItem[]
-}
-
 export async function loader() {
-  const posts = await getPosts()
-  return json<LoaderData>({ posts })
+  const posts = await getPosts() as PostListItem[]
+  return { posts }
 }
 
-export const meta: MetaFunction<typeof loader> = ({ data, location }) => ({
-  title: data.posts.find(p => location.pathname === `/blog/${p.slug}`)?.title
-})
+export const meta: MetaFunction<typeof loader> = ({ data, location }) => [
+  { title: data?.posts.find(p => location.pathname === `/blog/${p.slug}`)?.title }
+]
 
 export default function PostsLayout() {
-  const { posts } = useLoaderData<LoaderData>()
+  const { posts } = useLoaderData<typeof loader>()
   const { pathname } = useLocation()
   const isRoot = pathname === '/blog'
   const slug = pathname.split('/').slice(-1)[0]
