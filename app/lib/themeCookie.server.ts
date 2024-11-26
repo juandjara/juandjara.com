@@ -9,7 +9,7 @@ export const themeCookie = createCookie("color-scheme", {
 // from here: https://rossmoody.com/writing/remix-stitches
 export async function getTheme(request: Request) {
   const cookieHeader = request.headers.get("Cookie")
-  const cookieValue = (await themeCookie.parse(cookieHeader))
+  const cookieValue = (await themeCookie.parse(cookieHeader)) as string
   const themeHeader = request.headers.get('Sec-CH-Prefers-Color-Scheme')
 
   return cookieValue || themeHeader || 'light'
