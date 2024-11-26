@@ -3,8 +3,9 @@ import Content from "@/components/Content"
 import { getPosts } from "@/lib/posts.server"
 import type { PostListItem } from "@/lib/posts.server"
 import type { MetaFunction } from "@remix-run/node"
-import { Link, Outlet, useLoaderData, useLocation } from "@remix-run/react"
+import { Link, useLoaderData, useLocation, useOutlet } from "@remix-run/react"
 import parseTags from "@/lib/parseTags"
+import PostList from "@/components/PostList"
 
 export async function loader() {
   const posts = await getPosts() as PostListItem[]
@@ -12,7 +13,7 @@ export async function loader() {
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data, location }) => [
-  { title: data?.posts.find(p => location.pathname === `/blog/${p.slug}`)?.title }
+  { title: data?.posts.find(p => location.pathname === `/blog/${p.slug}`)?.title || 'Blog' },
 ]
 
 export default function PostsLayout() {
@@ -23,6 +24,7 @@ export default function PostsLayout() {
   const post = isRoot ? null : posts.find((p) => p.slug === slug)
   const link = isRoot ? '/' : '/blog'
   const title = post?.title || 'Blog'
+  const children = useOutlet()
 
   return (
     <div>
@@ -46,7 +48,9 @@ export default function PostsLayout() {
             ))}
           </div>
         )}
-        <Outlet />
+        {children ? children : (
+          <PostList posts={posts} />
+        )}
       </Content>
     </div>
   )

@@ -4,7 +4,7 @@ import type { LoaderFunctionArgs } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
 
 export async function loader({ params }: LoaderFunctionArgs) {
-  const post = await getSinglePost(`/blog/${params.slug}.md`)
+  const post = await getSinglePost(`/blog/${params['*']}.md`)
   return { html: post.code }
 }
 
