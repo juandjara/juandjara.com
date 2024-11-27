@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  engine:
+    restart: unless-stopped
+    build: .
+    # image: ghcr.io/juandjara/palomitas-engine:latest
+    container_name: juandjara
+    environment:
+      - NODE_ENV=production
+    ports:
+      - 3000:3000
