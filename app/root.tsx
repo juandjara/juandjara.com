@@ -12,7 +12,7 @@ import {
 import type { ActionFunctionArgs, LinksFunction, LoaderFunctionArgs, MetaFunction } from "@remix-run/node"
 import { data } from "@remix-run/node"
 
-import css from "./tailwind.css"
+import "./tailwind.css"
 import { getTheme, toggleTheme } from "./lib/themeCookie.server"
 import GlobalSpinner from "./components/GlobalSpiner"
 import Footer from "./components/Footer"
@@ -20,7 +20,7 @@ import BackgroundCanvas from "./components/BackgroundCanvas"
 import ClickSoundEffects from "./components/ClickSoundEffects"
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: css },
+  // { rel: "stylesheet", href: css },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
